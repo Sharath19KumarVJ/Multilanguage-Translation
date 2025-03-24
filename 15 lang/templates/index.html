@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Language Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>🌍 Multi-Language Translator</h1>
+
+    <div class="container">
+        <!-- Input Box -->
+        <div class="input-section">
+            <textarea id="inputText" placeholder="Enter text..."></textarea>
+            <select id="srcLang">
+                {% for lang, code in languages.items() %}
+                    <option value="{{ code }}">{{ lang }}</option>
+                {% endfor %}
+            </select>
+            <button onclick="startSpeechRecognition()">🎤 Voice Input</button>
+        </div>
+
+        <!-- Translation -->
+        <button onclick="translateText()">Translate</button>
+
+        <!-- Output Box -->
+        <div class="output-section">
+            <textarea id="translatedText" readonly></textarea>
+            <select id="destLang">
+                {% for lang, code in languages.items() %}
+                    <option value="{{ code }}">{{ lang }}</option>
+                {% endfor %}
+            </select>
+            <button onclick="speakTranslation()">🔊 Listen</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
