@@ -34,7 +34,7 @@ If enabled, the system speaks out the translated text.
 sh
 Copy
 Edit
-git clone https://github.com/your-username/Language-Translator.git
+git clone https://github.com/Sharath19KumarVJ/Multilanguage-Translation.git
 cd Language-Translator
 2️⃣ Install Dependencies
 Make sure you have Python installed, then run:
